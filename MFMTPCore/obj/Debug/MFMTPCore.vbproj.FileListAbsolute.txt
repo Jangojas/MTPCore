@@ -1,0 +1,107 @@
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\le\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\be\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\le\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\be\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\MFMTPCore.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\le\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\le\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\be\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\be\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\LE\Gadgeteer.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\BE\Gadgeteer.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\LE\Gadgeteer.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\BE\Gadgeteer.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\Gadgeteer.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\Gadgeteer.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\bin\Debug\Gadgeteer.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\be\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\be\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\le\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\le\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\MFMTPCore.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMarathon\obj\Debug\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\le\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\be\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\le\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\be\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\MFMTPCore.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\le\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\le\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\be\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\be\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\LE\Gadgeteer.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\BE\Gadgeteer.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\LE\Gadgeteer.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\BE\Gadgeteer.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\Gadgeteer.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\Gadgeteer.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\bin\Debug\Gadgeteer.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\be\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\be\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\le\MFMTPCore.pe
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\le\MFMTPCore.pdbx
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\MFMTPCore.dll
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\MFMTPCore.xml
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\MFMTPCore.pdb
+C:\Users\Jasmin\Documents\Visual Studio 2015\Projects\Codeplex\marathontp\MFMTPCore\obj\Debug\MFMTPCore.vbprojResolveAssemblyReference.cache
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\le\MFMTPCore.dll
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\be\MFMTPCore.dll
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\le\MFMTPCore.pdb
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\be\MFMTPCore.pdb
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\MFMTPCore.dll
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\MFMTPCore.pdb
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\MFMTPCore.xml
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\le\MFMTPCore.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\le\MFMTPCore.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\be\MFMTPCore.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\be\MFMTPCore.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\LE\Gadgeteer.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\BE\Gadgeteer.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\LE\Gadgeteer.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\BE\Gadgeteer.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\Gadgeteer.dll
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\Gadgeteer.pdb
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\bin\Debug\Gadgeteer.xml
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\MFMTPCore.vbprojResolveAssemblyReference.cache
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\be\MFMTPCore.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\be\MFMTPCore.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\le\MFMTPCore.pe
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\le\MFMTPCore.pdbx
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\MFMTPCore.dll
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\MFMTPCore.xml
+C:\Users\jango\Documents\Visual Studio 2013\Projects\Hyperion P.A.S\MFMTPCore\obj\Debug\MFMTPCore.pdb
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\le\MFMTPCore.dll
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\be\MFMTPCore.dll
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\le\MFMTPCore.pdb
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\be\MFMTPCore.pdb
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\MFMTPCore.dll
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\MFMTPCore.pdb
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\MFMTPCore.xml
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\le\MFMTPCore.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\le\MFMTPCore.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\be\MFMTPCore.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\be\MFMTPCore.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\LE\Gadgeteer.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\BE\Gadgeteer.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\LE\Gadgeteer.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\BE\Gadgeteer.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\Gadgeteer.dll
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\Gadgeteer.pdb
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\bin\Debug\Gadgeteer.xml
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\MFMTPCore.vbprojResolveAssemblyReference.cache
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\be\MFMTPCore.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\be\MFMTPCore.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\le\MFMTPCore.pe
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\le\MFMTPCore.pdbx
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\MFMTPCore.dll
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\MFMTPCore.xml
+C:\Users\jango\Source\Repos\HyperionH100\MFMTPCore\obj\Debug\MFMTPCore.pdb
