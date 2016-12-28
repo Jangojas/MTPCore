@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+# What is MTPCore?
 
-You can use the [editor on GitHub](https://github.com/Jangojas/mtpcore/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+MTPCore (MTP stands for Marathon Transport Protocol) is a library implemented over the MarathonTP Protocol V1.1.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+MarathonTP is conceived to be simple, reliable and humanely readable. This project aims to give .NET developers the tools necessary for the realization of applications compatible with MarathonTP.
 
-### Markdown
+## MTPCore is actually avalaible on the following Platform :
+* .Net Framework Portable 
+    * .NET Framework 4.6 
+    *  ASP.NET Core 5.0 
+    *  Windows Universal 10.0 
+* .Net Micro Framework 4.3 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jangojas/mtpcore/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# Resources
+MarathonTP website: [http://marathontp.info ](http://marathontp.info )  
+Issues: [https://github.com/Jangojas/mtpcore/issues ](https://github.com/Jangojas/mtpcore/issues )  
+NuGet Package UWP : [https://www.nuget.org/packages/IS_MTPCore ](https://www.nuget.org/packages/IS_MTPCore )
