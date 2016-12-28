@@ -9,10 +9,10 @@ Imports System.Reflection
 ' Vérifiez les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("MTPCore")>
-<Assembly: AssemblyDescription("Marathon communication driver for Windows")>
+<Assembly: AssemblyDescription("MarathonTP communication driver for Windows")>
 <Assembly: AssemblyCompany("Inertia Systemes")>
 <Assembly: AssemblyProduct("MTPCore")>
-<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2015")>
+<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2016")>
 <Assembly: AssemblyTrademark("")> 
 <Assembly: NeutralResourcesLanguage("fr")>
 
@@ -27,5 +27,5 @@ Imports System.Reflection
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.9.4.0")>
-<Assembly: AssemblyFileVersion("0.9.4.0")>
+<Assembly: AssemblyVersion("2016.12.28.2")>
+<Assembly: AssemblyFileVersion("2016.12.28.2")>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MTPCore", "MTPCore.vbproj", "{B212DC77-917D-4070-971C-61163B78BACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B212DC77-917D-4070-971C-61163B78BACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B212DC77-917D-4070-971C-61163B78BACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B212DC77-917D-4070-971C-61163B78BACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B212DC77-917D-4070-971C-61163B78BACB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

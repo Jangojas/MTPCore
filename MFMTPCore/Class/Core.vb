@@ -818,7 +818,7 @@ Public Class Core
         Return TNS
     End Function
 
-    Public Function MessageValidation(ByVal message As Object, encyptionMode As Inertia.MFMTPCore.Common.SecurityModes, Optional Password As String = "") As Byte()
+    Public Function MessageValidation(ByVal message As Object, encyptionMode As Inertia.MTPCore.Common.SecurityModes, Optional Password As String = "") As Byte()
 
         Dim MessageHeader As String = ""
         Dim Payload As String = ""
@@ -902,7 +902,7 @@ Public Class Core
 
     End Function
 
-    Private Function CreateMessageBuffer(MessageHeader As String, Payload As String, encyptionMode As Inertia.MFMTPCore.Common.SecurityModes, ByRef Password As String) As Byte()
+    Private Function CreateMessageBuffer(MessageHeader As String, Payload As String, encyptionMode As Inertia.MTPCore.Common.SecurityModes, ByRef Password As String) As Byte()
 
         Dim CRCBuffer As Byte() = Nothing
         Dim OutBuffer As Byte() = Nothing
@@ -930,7 +930,7 @@ Public Class Core
 
             End Select
 
-            CheckSumCalc = Inertia.MFMTPCore.Common.CalculateCRC16(CRCBuffer)
+            CheckSumCalc = Inertia.MTPCore.Common.CalculateCRC16(CRCBuffer)
             Dim CRC1 As Byte = CByte((CheckSumCalc And 255))
             Dim CRC2 As Byte = CByte((CheckSumCalc \ CUShort(2 ^ 8)))
 

@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("MFMarathon")> 
-<Assembly: AssemblyDescription("Marathon communication driver for NetMF")> 
+<Assembly: AssemblyTitle("MTPCore")> 
+<Assembly: AssemblyDescription("MarathonTP communication driver for NetMF")> 
 <Assembly: AssemblyCompany("Inertia Systemes")> 
 <Assembly: AssemblyProduct("MFMarathon")> 
-<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2015")> 
+<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2016")> 
 <Assembly: AssemblyTrademark("")> 
 
 ' Version information for an assembly consists of the following four values:
@@ -23,7 +23,7 @@ Imports System.Runtime.InteropServices
 '      Revision
 '
 
-<Assembly: AssemblyVersion("0.9.4.0")> 
-<Assembly: AssemblyFileVersion("0.9.4.0")> 
+<Assembly: AssemblyVersion("2016.12.28.2")> 
+<Assembly: AssemblyFileVersion("2016.12.28.2")> 
 
 

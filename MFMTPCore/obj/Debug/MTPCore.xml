@@ -1,0 +1,596 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MTPCore
+</name>
+</assembly>
+<members>
+<member name="F:Inertia.MTPCore.Common.Default_UDP_port">
+	<summary>
+ Default MarathonTP UDP port
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonBoolean">
+	<summary>
+ String representation of MarathonTP Boolean datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonInteger">
+	<summary>
+ String representation of MarathonTP Integer datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonShort">
+	<summary>
+ String representation of MarathonTP Short datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonUShort">
+	<summary>
+ String representation of MarathonTP UShort datatype
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.MarathonLong">
+	<summary>
+ String representation of MarathonTP Long datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonSingle">
+	<summary>
+ String representation of MarathonTP Single datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonDouble">
+	<summary>
+ String representation of MarathonTP Double datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonByte">
+	<summary>
+ String representation of MarathonTP Byte datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonString">
+	<summary>
+ String representation of MarathonTP String datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MarathonNil">
+	<summary>
+ String representation of MarathonTP NULL datatype
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.RequestCode">
+	<summary>
+ Request code
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.AnswerCode">
+	<summary>
+ Answer code
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.STX">
+	<summary>
+ Beginning of message symbol
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.ETX">
+	<summary>
+ End of message symbol
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.DIV">
+	<summary>
+ Item separator
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Inertia.MTPCore.Common.MarathonVersion">
+	<summary>
+ Available versions
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.MessageCodes.ReadVariables">
+	<summary>
+ Used to read tag(s) value(s) on remote device
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.MessageCodes.WriteVariables">
+	<summary>
+ Used to write value(s) in tag(s) on remote device
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.MessageCodes.Discovery">
+	<summary>
+ Used to Ping remote device
+ </summary>
+</member><member name="T:Inertia.MTPCore.Common.MessageCodes">
+	<summary>
+ Available message codes
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.ErrorCodes.OperationSuccessful">
+	<summary>
+ The message is successfully processed
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.ErrorCodes.ElementNotFound">
+	<summary>
+ The specified item does not exist
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.ErrorCodes.IncompatibleData">
+	<summary>
+ The datatype is incompatible
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.ErrorCodes.IndexOutOfRange">
+	<summary>
+ The specified index is out of range
+ </summary>
+</member><member name="T:Inertia.MTPCore.Common.ErrorCodes">
+	<summary>
+ Available error codes
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.NetworkTypes.EthernetIP">
+	<summary>
+ Ethernet/IP network layer
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.NetworkTypes.Serial">
+	<summary>
+ Serial network layer
+ </summary>
+</member><member name="T:Inertia.MTPCore.Common.NetworkTypes">
+	<summary>
+ Available Network Type
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.SecurityModes.None">
+	<summary>
+ None
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.SecurityModes.XTEA">
+	<summary>
+ XTEA
+ </summary>
+</member><member name="F:Inertia.MTPCore.Common.SecurityModes.Advanced">
+	<summary>
+ Advanced
+ </summary>
+</member><member name="T:Inertia.MTPCore.Common.SecurityModes">
+	<summary>
+ Security Mode
+ </summary>
+</member><member name="M:Inertia.MTPCore.Common.Versioning(System.Int32)">
+	<summary>
+ Return a string that contain protocol version
+ </summary>
+	<param name="Version"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Common.aCRC16Table">
+	<summary>
+ Table to calculate a CRC
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Common.CalculateCRC16(System.Byte[])">
+	<summary>
+ Calculate a CRC
+ </summary>
+	<param name="DataInput">Bytes array containing a complete MarathonTP message frame</param>
+	<returns>Calculated CRC</returns>
+</member><member name="T:Inertia.MTPCore.Common">
+	<summary>
+ Provide access to global definition
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Unicode.Utf8Checker.IsUtf8(System.Byte[],System.Int32)">
+	<summary>
+	</summary>
+	<param name="buffer"></param>
+	<param name="length"></param>
+	<returns></returns>
+</member><member name="M:Inertia.MTPCore.Unicode.Utf8Checker.IsValid(System.Byte[],System.Int32,System.Int32,System.Int32@)">
+	<summary>
+	</summary>
+	<param name="buffer"></param>
+	<param name="position"></param>
+	<param name="length"></param>
+	<param name="bytes"></param>
+	<returns></returns>
+</member><member name="T:Inertia.MTPCore.Unicode.Utf8Checker">
+	<summary>
+ http://anubis.dkuug.dk/JTC1/SC2/WG2/docs/n1335
+ 
+ http://www.cl.cam.ac.uk/~mgk25/ucs/ISO-10646-UTF-8.html
+ 
+ http://www.unicode.org/versions/corrigendum1.html
+ 
+ http://www.ietf.org/rfc/rfc2279.txt
+ 
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.VER">
+	<summary>
+ MarathonTP protocol version
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.VALUESLIST">
+	<summary>
+ MarathonTP element(s) to read
+ </summary>
+	<remarks>Can be TAG or index, but must be all the same method.</remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1.STAMP">
+	<summary>
+ MarathonTP message Timestamp for tracking and retries
+ </summary>
+</member><member name="T:Inertia.MTPCore.Packet.Request.ReadVariablesPacketV1_1">
+	<summary>
+ Value reading request definition.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1.VER">
+	<summary>
+ MarathonTP protocol version
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1.VALUESLIST">
+	<summary>
+ MarathonTP elements to write on
+ </summary>
+	<remarks>Must be a combination of an element (TAG or index) and a value.</remarks>
+</member><member name="T:Inertia.MTPCore.Packet.Request.WriteVariablesPacketV1_1">
+	<summary>
+ Value writing request definition.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1.VER">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1.VALUESLIST">
+	<summary>
+ MarathonTP element(s) to read
+ </summary>
+	<remarks>Can be TAG or index, but must be all the same method.</remarks>
+</member><member name="T:Inertia.MTPCore.Packet.Request.DiscoverPacketV1_1">
+	<summary>
+ Discover request definition.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1.VER">
+	<summary>
+ MarathonTP protocol version
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1.VALUESLIST">
+	<summary>
+ MarathonTP data value list
+ </summary>
+	<remarks>Represented by a combination of error code, datatype and value.</remarks>
+</member><member name="T:Inertia.MTPCore.Packet.Answer.ReturnedVariablesPacketV1_1">
+	<summary>
+ Value reading answer definition.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1.VER">
+	<summary>
+ MarathonTP protocol version
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1.CODES">
+	<summary>
+ MarathonTP error code list
+ </summary>
+</member><member name="T:Inertia.MTPCore.Packet.Answer.ResponseGenericPacketV1_1">
+	<summary>
+ Value writing answer definition.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1.VER">
+	<summary>
+ MarathonTP protocol version
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1.CMD">
+	<summary>
+ MarathonTP command type
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1.RA">
+	<summary>
+ MarathonTP message type code
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1.TNS">
+	<summary>
+ MarathonTP message transaction number
+ </summary>
+</member><member name="P:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1.VALUESLIST">
+	<summary>
+ MarathonTP data value list
+ </summary>
+	<remarks>Represented by a combination of error code, datatype and value.</remarks>
+</member><member name="T:Inertia.MTPCore.Packet.Answer.DiscoverResponsePacketV1_1">
+	<summary>
+ Discover request answer definition.
+ </summary>
+</member><member name="P:Inertia.MTPCore.DataTypes.DeviceObject.Password">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.DataTypes.DeviceObject.NetworkType">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.DataTypes.DeviceObject.NetworkAddress">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.DataTypes.DeviceObject.LastDiscoveryTime">
+	<summary>
+	</summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.DataTypes.DeviceObject.PendingMessages">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="T:Inertia.MTPCore.DataTypes.DeviceObject">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Core.rnd">
+	<summary>
+ Random number generator.
+ </summary>
+</member><member name="E:Inertia.MTPCore.Core.WritingReturn">
+	<summary>
+ Occurs when a value(s) writing is returned.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.ReadingReturn">
+	<summary>
+ Occurs when value(s) is returned.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.DiscoverReturn">
+	<summary>
+ Occurs when Discover is returned.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.NewWritingReceive">
+	<summary>
+ Occurs when a value(s) writing is requested.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.NewReadingReceive">
+	<summary>
+ Occurs when value(s) is requested.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.NewDiscoverReceive">
+	<summary>
+ Occurs when Discover is requested.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.MessageSendingRequest">
+	<summary>
+ Occurs when Message Sending is requested.
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Core.RecylingTimer">
+	<summary>
+ Message recycling timer.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Core.MessageStatTimer">
+	<summary>
+ Timer to evaluate protocol stats.
+ </summary>
+</member><member name="F:Inertia.MTPCore.Core.DeviceList">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Core.DiscoveryNetworkList">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="F:Inertia.MTPCore.Core.SuccessfulMessageCountMemory">
+	<summary>
+	</summary>
+	<remarks></remarks>
+</member><member name="P:Inertia.MTPCore.Core.TNS">
+	<summary>
+ Actual message transaction number.
+ </summary>
+</member><member name="P:Inertia.MTPCore.Core.MaxDeviceObjectCount">
+	<summary>
+ Maximum number of device in device list.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>0 for infinite number. Negative number not allowed.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.MessageTimeOut">
+	<summary>
+ Time before a message is considered lost.
+ </summary>
+	<remarks>Expressed in milliseconds. This property is application wide. Valid range is 0 to 65535.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.MaxRetransmitInterval">
+	<summary>
+ Number in milliseconds representing the absolute maximum time limit for issuing a message.
+ </summary>
+	<remarks>Valid range is 0 to 65535.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.MaxRetryAttempt">
+	<summary>
+ Number of allowed retry.
+ </summary>
+	<remarks>Valid range is 0 to 255.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.MinimumSendDelay">
+	<summary>
+ Number in milliseconds representing the minimum time delay between two subsequent message send on the network.
+ </summary>
+	<remarks>Valid range is 0 to 65535.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.ReceivedMessageCount">
+	<summary>
+ Keep count of received message.
+ </summary>
+	<remarks>Keep count of every received message. Good and bad one. Automatically reset if value exceed 2,147,483,647.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.SendedMessageCount">
+	<summary>
+ Keep count of sended message. 
+ </summary>
+	<remarks>Count every message. With or without response. Automatically reset if value exceed 2,147,483,647.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.FailedMessageCount">
+	<summary>
+ Keep count of failed message.
+ </summary>
+	<remarks>A fail occur when no response is received for a specific message. Automatically reset if value exceed 2,147,483,647.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.RetriedMessageCount">
+	<summary>
+ Keep count of retried message.
+ </summary>
+	<remarks>A retry occur when ne response is received after message timeout. Automatically reset if value exceed 2,147,483,647.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.SuccessfulMessageCount">
+	<summary>
+ Used to keep tracking of successfully sended message.
+ </summary>
+</member><member name="P:Inertia.MTPCore.Core.SuccessfulMessagePerSecond">
+	<summary>
+ Number of successfull message transcation per second.
+ </summary>
+	<remarks>This value is evaluated every second. Automatically reset if value exceed 2,147,483,647.</remarks>
+</member><member name="P:Inertia.MTPCore.Core.DeviceSecurityModes">
+	<summary>
+ Used to store Device MarathonTP Security Mode.
+ </summary>
+</member><member name="P:Inertia.MTPCore.Core.DevicePassword">
+	<summary>
+ Used to store Device MarathonTP Security Mode.
+ </summary>
+</member><member name="M:Inertia.MTPCore.Core.AssignPasswordToDevice(Inertia.MTPCore.Common.NetworkTypes,System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="NetworkType"></param>
+	<param name="NetworkAddress"></param>
+	<param name="Password"></param>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Core.MessageAllocation(System.Byte[],Inertia.MTPCore.Common.NetworkTypes,System.String,System.UInt16,System.Byte)">
+	<summary>
+	</summary>
+	<param name="message"></param>
+	<param name="NetworkType"></param>
+	<param name="NetworkAddress"></param>
+	<param name="TNS"></param>
+	<param name="CMD"></param>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Core.OnDataReceived(System.Byte[],System.Int32,Inertia.MTPCore.Common.NetworkTypes,System.String)">
+	<summary>
+ Evaluate a CRC for the byte array received on the socket. If the calculated CRC equals the CRC provided in the byte array then the message parser is called.
+ </summary>
+	<param name="data"></param>
+	<param name="length"></param>
+	<param name="NetworkType"></param>
+	<param name="NetworkAddress"></param>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Core.ParsePayload(System.String,System.Byte[],Inertia.MTPCore.Common.SecurityModes,System.Int32,System.String)">
+	<summary>
+	</summary>
+	<param name="StringToParse"></param>
+	<param name="NoCRCRawData"></param>
+	<param name="SecurityModes"></param>
+	<param name="PayloadIndex"></param>
+	<param name="Password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Core.IncrementTNS">
+	<summary>
+ Increments the value of the transaction number
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Inertia.MTPCore.Core.RecylingTimer_Tick">
+	<summary>
+ Remove from message list unhandled message.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

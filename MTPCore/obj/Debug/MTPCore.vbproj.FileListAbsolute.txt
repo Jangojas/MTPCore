@@ -5,3 +5,10 @@ C:\Users\jango\Source\Repos\MTPClient\MTPCore\bin\Debug\MTPCore.pdb
 C:\Users\jango\Source\Repos\MTPClient\MTPCore\bin\Debug\MTPCore.xml
 C:\Users\jango\Source\Repos\MTPClient\MTPCore\obj\Debug\MTPCore.dll
 C:\Users\jango\Source\Repos\MTPClient\MTPCore\obj\Debug\MTPCore.pdb
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Debug\MTPCore.dll
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Debug\MTPCore.pdb
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Debug\MTPCore.xml
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Debug\MTPCore.vbprojResolveAssemblyReference.cache
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Debug\MTPCore.dll
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Debug\MTPCore.xml
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Debug\MTPCore.pdb
