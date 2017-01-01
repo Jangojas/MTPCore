@@ -1,0 +1,7 @@
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Release\MTPCore.dll
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Release\MTPCore.pdb
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\bin\Release\MTPCore.xml
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Release\MTPCore.vbprojResolveAssemblyReference.cache
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Release\MTPCore.dll
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Release\MTPCore.xml
+C:\Users\jango\Source\Repos\MTPCore\MTPCore\obj\Release\MTPCore.pdb

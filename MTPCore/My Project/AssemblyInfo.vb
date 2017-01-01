@@ -9,7 +9,7 @@ Imports System.Reflection
 ' Vérifiez les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("MTPCore")>
-<Assembly: AssemblyDescription("MarathonTP communication driver for Windows")>
+<Assembly: AssemblyDescription("Portable Class Library for MarathonTP protocol. Compatible with ARM based Windows 10 IoT Core device.")>
 <Assembly: AssemblyCompany("Inertia Systemes")>
 <Assembly: AssemblyProduct("MTPCore")>
 <Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2017")>

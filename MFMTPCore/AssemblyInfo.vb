@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("MTPCore")> 
-<Assembly: AssemblyDescription("MarathonTP communication driver for NetMF")> 
+<Assembly: AssemblyDescription("NETMF Class Library for MarathonTP protocol. Compatible with .Net Micro Framework 4.3 based device.")> 
 <Assembly: AssemblyCompany("Inertia Systemes")> 
 <Assembly: AssemblyProduct("MFMarathon")> 
 <Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2017")> 
