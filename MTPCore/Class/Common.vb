@@ -172,6 +172,10 @@ Public NotInheritable Class Common
         ''' Serial network layer
         ''' </summary>
         Serial = 1
+        ''' <summary>
+        ''' Radio Frequency nRF24L01p network layer
+        ''' </summary>
+        RF = 2
     End Enum
 
     ''' <summary>

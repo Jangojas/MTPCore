@@ -173,6 +173,11 @@ MTPCore
  Serial network layer
  </summary>
 </member>
+<member name="F:Inertia.MTPCore.Common.NetworkTypes.RF">
+ <summary>
+ Radio Frequency nRF24L01p network layer
+ </summary>
+</member>
 <member name="T:Inertia.MTPCore.Common.SecurityModes">
  <summary>
  Security Mode
@@ -384,7 +389,7 @@ MTPCore
 </member>
 <member name="P:Inertia.MTPCore.Core.DevicePassword">
  <summary>
- Used to store Device MarathonTP Security Mode.
+ Used to store Device MarathonTP Password.
  </summary>
 </member>
 <member name="M:Inertia.MTPCore.Core.AssignPasswordToDevice(Inertia.MTPCore.Common.NetworkTypes,System.String,System.String)">

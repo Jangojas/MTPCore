@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("MarathonTP communication driver for NetMF")> 
 <Assembly: AssemblyCompany("Inertia Systemes")> 
 <Assembly: AssemblyProduct("MFMarathon")> 
-<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2016")> 
+<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2017")> 
 <Assembly: AssemblyTrademark("")> 
 
 ' Version information for an assembly consists of the following four values:
@@ -23,7 +23,7 @@ Imports System.Runtime.InteropServices
 '      Revision
 '
 
-<Assembly: AssemblyVersion("2016.12.28.2")> 
-<Assembly: AssemblyFileVersion("2016.12.28.2")> 
+<Assembly: AssemblyVersion("2017.1.1.0")> 
+<Assembly: AssemblyFileVersion("2017.1.1.0")> 
 
 

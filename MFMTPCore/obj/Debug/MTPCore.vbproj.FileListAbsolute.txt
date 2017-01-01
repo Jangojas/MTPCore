@@ -24,3 +24,4 @@ C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\le\MTPCore.pdbx
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.dll
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.xml
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.pdb
+C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.vbprojResolveAssemblyReference.cache

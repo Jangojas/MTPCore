@@ -126,8 +126,8 @@ Public Class Core
         Set(value As UShort)
             If value > UShort.MaxValue Then
                 m_MaxDeviceObjectCount = UShort.MaxValue
-            ElseIf value < 0 Then
-                m_MaxDeviceObjectCount = 0
+            ElseIf value < 1 Then
+                m_MaxDeviceObjectCount = 1
             Else : m_MaxDeviceObjectCount = value
             End If
         End Set
@@ -330,7 +330,7 @@ Public Class Core
     Private m_DeviceSecurityModes As Common.SecurityModes
 
     ''' <summary>
-    ''' Used to store Device MarathonTP Security Mode.
+    ''' Used to store Device MarathonTP Password.
     ''' </summary>
     Public Property DevicePassword As String
         Get
@@ -354,7 +354,9 @@ Public Class Core
         DeviceList = New List(Of Object)
         DiscoveryNetworkList = New List(Of Object)
         DeviceSecurityModes = Common.SecurityModes.None
-        DevicePassword = "ISMTPClient"
+        DevicePassword = "DefaultPassword"
+        MaxDeviceObjectCount = 1
+        MaxRetryAttempt = 1
 
     End Sub
 
@@ -448,7 +450,7 @@ Public Class Core
                         End With
                         .NetworkType = NetworkType
                         .NetworkAddress = NetworkAddress
-                        .Password = ""
+                        .Password = DevicePassword
                         .PendingMessages(0) = newMTPMessage
                     End With
                     DeviceList.Add(actualDevice)
@@ -516,7 +518,7 @@ Public Class Core
                     With actualDevice
                         .NetworkType = NetworkType
                         .NetworkAddress = NetworkAddress
-                        .Password = ""
+                        .Password = "DevicePassword"
                     End With
                     DeviceList.Add(actualDevice)
                 Else
@@ -597,11 +599,11 @@ Public Class Core
                                             Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
                                             'For every pending items
                                             Dim PAIR As New List(Of Object)
-                                            For i = 0 To ((length - 4) / 2) - 1
+                                            For i = 0 To myParsedPayload.Length - 2
                                                 Dim temp As Common.WritingPair
-                                                'The firt item is index. Second item is value
-                                                temp.Index = myParsedString(CInt(4 + (i * 2)))
-                                                temp.Value = myParsedString(CInt(5 + (i * 2)))
+                                                'The first item is index. Second item is value
+                                                temp.Index = myParsedPayload(i * 2)
+                                                temp.Value = myParsedPayload((i * 2) + 1)
                                                 PAIR.Add(temp)
                                             Next
 
@@ -613,8 +615,8 @@ Public Class Core
 
                                             RaiseEvent NewWritingReceive(sMessage, New MessageEventArgs(NetworkType, NetworkAddress))
 
-                                        ElseIf CInt(myParsedString(3)) = 3 Then  'Dicover Request
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
+                                        ElseIf CInt(myParsedString(3)) = 3 Then  'Discover Request
+                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex, DevicePassword)
                                             'For every pending items
                                             Dim ELE As New List(Of Object)
                                             For i = 0 To myParsedPayload.Length - 1
@@ -635,7 +637,7 @@ Public Class Core
 
                                     Case Common.AnswerCode
                                         If CInt(myParsedString(3)) = 1 Then      'Return of variable(s) reading
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.XTEA, PayloadIndex, actualDevice.Password)
+                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
                                             Dim VALUES As New List(Of Object)
                                             For i = 0 To (myParsedPayload.Length / 3) - 1
                                                 Dim temp As Common.ReturnedData
@@ -671,7 +673,7 @@ Public Class Core
                                             Next
 
                                         ElseIf CInt(myParsedString(3)) = 2 Then  'Return of  variable(s) writing
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.XTEA, PayloadIndex, actualDevice.Password)
+                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
                                             Dim CODES As New List(Of Object)
                                             'For every pending items
                                             For i = 0 To myParsedPayload.Length - 1
@@ -1010,7 +1012,7 @@ Public Class Core
                                     If .Retries = 0 Then
                                         RaiseEvent MessageSendingRequest((.Message), New MessageEventArgs(device.NetworkType, device.NetworkAddress))
                                         .Retries += CUShort(1)
-                                    ElseIf .Retries < MaxRetryAttempt Then
+                                    ElseIf .Retries <= MaxRetryAttempt Then
                                         'Calculate elapsed time
                                         Dim elapsedLast As TimeSpan
                                         Dim elapsedTotal As TimeSpan

@@ -134,6 +134,10 @@ MTPCore
 	<summary>
  Serial network layer
  </summary>
+</member><member name="F:Inertia.MTPCore.Common.NetworkTypes.RF">
+	<summary>
+ Radio Frequency nRF24L01p network layer
+ </summary>
 </member><member name="T:Inertia.MTPCore.Common.NetworkTypes">
 	<summary>
  Available Network Type
@@ -488,7 +492,7 @@ MTPCore
  </summary>
 	<value></value>
 	<returns></returns>
-	<remarks>0 for infinite number. Negative number not allowed.</remarks>
+	<remarks>1 is the minimum value. Negative number not allowed.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.MessageTimeOut">
 	<summary>
  Time before a message is considered lost.
@@ -544,7 +548,7 @@ MTPCore
  </summary>
 </member><member name="P:Inertia.MTPCore.Core.DevicePassword">
 	<summary>
- Used to store Device MarathonTP Security Mode.
+ Used to store Device MarathonTP Password.
  </summary>
 </member><member name="M:Inertia.MTPCore.Core.AssignPasswordToDevice(Inertia.MTPCore.Common.NetworkTypes,System.String,System.String)">
 	<summary>

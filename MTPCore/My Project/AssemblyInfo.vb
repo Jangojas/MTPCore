@@ -12,7 +12,7 @@ Imports System.Reflection
 <Assembly: AssemblyDescription("MarathonTP communication driver for Windows")>
 <Assembly: AssemblyCompany("Inertia Systemes")>
 <Assembly: AssemblyProduct("MTPCore")>
-<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2016")>
+<Assembly: AssemblyCopyright("Copyright © Inertia Systemes 2017")>
 <Assembly: AssemblyTrademark("")> 
 <Assembly: NeutralResourcesLanguage("fr")>
 
@@ -27,5 +27,5 @@ Imports System.Reflection
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2016.12.28.2")>
-<Assembly: AssemblyFileVersion("2016.12.28.2")>
+<Assembly: AssemblyVersion("2017.1.1.0")>
+<Assembly: AssemblyFileVersion("2017.1.1.0")>
