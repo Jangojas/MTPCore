@@ -3,4 +3,8 @@
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DeployTransport>Emulator</DeployTransport>
+    <DeployDevice>Microsoft</DeployDevice>
+  </PropertyGroup>
 </Project>

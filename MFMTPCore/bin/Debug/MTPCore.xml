@@ -461,6 +461,13 @@ MTPCore
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="E:Inertia.MTPCore.Core.MessageFailed">
+	<summary>
+ Occurs when a Message Failure occurs.
+ </summary>
+	<param name="sender">Message transaction number</param>
+	<param name="e"></param>
+	<remarks></remarks>
 </member><member name="F:Inertia.MTPCore.Core.RecylingTimer">
 	<summary>
  Message recycling timer.
@@ -488,60 +495,50 @@ MTPCore
  </summary>
 </member><member name="P:Inertia.MTPCore.Core.MaxDeviceObjectCount">
 	<summary>
- Maximum number of device in device list.
+ Maximum number of device in device list. 1 is the minimum value. Negative number not allowed.
  </summary>
 	<value></value>
 	<returns></returns>
-	<remarks>1 is the minimum value. Negative number not allowed.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.MessageTimeOut">
 	<summary>
- Time before a message is considered lost.
+ Time before a message is considered lost. Expressed in milliseconds. This property is application wide. Valid range is 100 to 65535.
  </summary>
-	<remarks>Expressed in milliseconds. This property is application wide. Valid range is 0 to 65535.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.MaxRetransmitInterval">
 	<summary>
- Number in milliseconds representing the absolute maximum time limit for issuing a message.
+ Number in milliseconds representing the absolute maximum time limit for issuing a message. Valid range is 0 to 65535.
  </summary>
-	<remarks>Valid range is 0 to 65535.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.MaxRetryAttempt">
 	<summary>
- Number of allowed retry.
+ Number of allowed retry. Valid range is 0 to 255.
  </summary>
-	<remarks>Valid range is 0 to 255.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.MinimumSendDelay">
 	<summary>
- Number in milliseconds representing the minimum time delay between two subsequent message send on the network.
+ Number in milliseconds representing the minimum time delay between two subsequent message send on the network. Valid range is 0 to 65535.
  </summary>
-	<remarks>Valid range is 0 to 65535.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.ReceivedMessageCount">
 	<summary>
- Keep count of received message.
+ Keep count of received message. Keep count of every received message. Good and bad one. Automatically reset if value exceed 2,147,483,647.
  </summary>
-	<remarks>Keep count of every received message. Good and bad one. Automatically reset if value exceed 2,147,483,647.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.SendedMessageCount">
 	<summary>
- Keep count of sended message. 
+ Keep count of sended message. Count every message. With or without response. Automatically reset if value exceed 2,147,483,647.
  </summary>
-	<remarks>Count every message. With or without response. Automatically reset if value exceed 2,147,483,647.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.FailedMessageCount">
 	<summary>
- Keep count of failed message.
+ Keep count of failed message. A fail occur when no response is received for a specific message. Automatically reset if value exceed 2,147,483,647.
  </summary>
-	<remarks>A fail occur when no response is received for a specific message. Automatically reset if value exceed 2,147,483,647.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.RetriedMessageCount">
 	<summary>
- Keep count of retried message.
+ Keep count of retried message. A retry occur when ne response is received after message timeout. Automatically reset if value exceed 2,147,483,647.
  </summary>
-	<remarks>A retry occur when ne response is received after message timeout. Automatically reset if value exceed 2,147,483,647.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.SuccessfulMessageCount">
 	<summary>
  Used to keep tracking of successfully sended message.
  </summary>
 </member><member name="P:Inertia.MTPCore.Core.SuccessfulMessagePerSecond">
 	<summary>
- Number of successfull message transcation per second.
+ Number of successfull message transcation per second. This value is evaluated every second. Automatically reset if value exceed 2,147,483,647.
  </summary>
-	<remarks>This value is evaluated every second. Automatically reset if value exceed 2,147,483,647.</remarks>
 </member><member name="P:Inertia.MTPCore.Core.DeviceSecurityModes">
 	<summary>
  Used to store Device MarathonTP Security Mode.

@@ -72,6 +72,14 @@ Public Class Core
     Public Event MessageSendingRequest(sender As Byte(), e As MessageEventArgs)
 
     ''' <summary>
+    ''' Occurs when a Message Failure occurs.
+    ''' </summary>
+    ''' <param name="sender">Message transaction number</param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Public Event MessageFailed(sender As UShort, e As MessageEventArgs)
+
+    ''' <summary>
     ''' Message recycling timer.
     ''' </summary>
     ''' <remarks></remarks>
@@ -118,11 +126,10 @@ Public Class Core
     Private m_TNS As UShort
 
     ''' <summary>
-    ''' Maximum number of device in device list.
+    ''' Maximum number of device in device list. 1 is the minimum value. Negative number not allowed.
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
-    ''' <remarks>1 is the minimum value. Negative number not allowed.</remarks>
     Public Property MaxDeviceObjectCount As UShort
         Get
             Return m_MaxDeviceObjectCount
@@ -139,9 +146,8 @@ Public Class Core
     Private m_MaxDeviceObjectCount As UShort
 
     ''' <summary>
-    ''' Time before a message is considered lost.
+    ''' Time before a message is considered lost. Expressed in milliseconds. This property is application wide. Valid range is 100 to 65535.
     ''' </summary>
-    ''' <remarks>Expressed in milliseconds. This property is application wide. Valid range is 0 to 65535.</remarks>
     Public Property MessageTimeOut As UShort
         Get
             Return m_MessageTimeOut
@@ -149,8 +155,8 @@ Public Class Core
         Set(value As UShort)
             If value > UShort.MaxValue Then
                 m_MessageTimeOut = UShort.MaxValue
-            ElseIf value < 1000 Then
-                m_MessageTimeOut = 1000
+            ElseIf value < 100 Then
+                m_MessageTimeOut = 100
             Else : m_MessageTimeOut = value
             End If
         End Set
@@ -158,9 +164,8 @@ Public Class Core
     Private m_MessageTimeOut As UShort
 
     ''' <summary>
-    ''' Number in milliseconds representing the absolute maximum time limit for issuing a message.
+    ''' Number in milliseconds representing the absolute maximum time limit for issuing a message. Valid range is 0 to 65535.
     ''' </summary>
-    ''' <remarks>Valid range is 0 to 65535.</remarks>
     Public Property MaxRetransmitInterval As UShort
         Get
             Return m_MaxRetransmitInterval
@@ -177,9 +182,8 @@ Public Class Core
     Private m_MaxRetransmitInterval As UShort
 
     ''' <summary>
-    ''' Number of allowed retry.
+    ''' Number of allowed retry. Valid range is 0 to 255.
     ''' </summary>
-    ''' <remarks>Valid range is 0 to 255.</remarks>
     Public Property MaxRetryAttempt As Byte
         Get
             Return m_MaxRetryAttempt
@@ -196,9 +200,8 @@ Public Class Core
     Private m_MaxRetryAttempt As Byte
 
     ''' <summary>
-    ''' Number in milliseconds representing the minimum time delay between two subsequent message send on the network.
+    ''' Number in milliseconds representing the minimum time delay between two subsequent message send on the network. Valid range is 0 to 65535.
     ''' </summary>
-    ''' <remarks>Valid range is 0 to 65535.</remarks>
     Public Property MinimumSendDelay As UShort
         Get
             Return m_MinimumSendDelay
@@ -215,9 +218,8 @@ Public Class Core
     Private m_MinimumSendDelay As UShort
 
     ''' <summary>
-    ''' Keep count of received message.
+    ''' Keep count of received message. Keep count of every received message. Good and bad one. Automatically reset if value exceed 2,147,483,647.
     ''' </summary>
-    ''' <remarks>Keep count of every received message. Good and bad one. Automatically reset if value exceed 2,147,483,647.</remarks>
     Public Property ReceivedMessageCount As Integer
         Get
             Return m_ReceivedMessageCount
@@ -232,9 +234,8 @@ Public Class Core
     Private m_ReceivedMessageCount As Integer
 
     ''' <summary>
-    ''' Keep count of sended message. 
+    ''' Keep count of sended message. Count every message. With or without response. Automatically reset if value exceed 2,147,483,647.
     ''' </summary>
-    ''' <remarks>Count every message. With or without response. Automatically reset if value exceed 2,147,483,647.</remarks>
     Public Property SendedMessageCount As Integer
         Get
             Return m_SendedMessageCount
@@ -249,9 +250,8 @@ Public Class Core
     Private m_SendedMessageCount As Integer
 
     ''' <summary>
-    ''' Keep count of failed message.
+    ''' Keep count of failed message. A fail occur when no response is received for a specific message. Automatically reset if value exceed 2,147,483,647.
     ''' </summary>
-    ''' <remarks>A fail occur when no response is received for a specific message. Automatically reset if value exceed 2,147,483,647.</remarks>
     Public Property FailedMessageCount As Integer
         Get
             Return m_FailedMessageCount
@@ -266,9 +266,8 @@ Public Class Core
     Private m_FailedMessageCount As Integer
 
     ''' <summary>
-    ''' Keep count of retried message.
+    ''' Keep count of retried message. A retry occur when ne response is received after message timeout. Automatically reset if value exceed 2,147,483,647.
     ''' </summary>
-    ''' <remarks>A retry occur when ne response is received after message timeout. Automatically reset if value exceed 2,147,483,647.</remarks>
     Public Property RetriedMessageCount As Integer
         Get
             Return m_RetriedMessageCount
@@ -299,9 +298,8 @@ Public Class Core
     Private m_SuccessfulMessageCount As Integer
 
     ''' <summary>
-    ''' Number of successfull message transcation per second.
+    ''' Number of successfull message transcation per second. This value is evaluated every second. Automatically reset if value exceed 2,147,483,647.
     ''' </summary>
-    ''' <remarks>This value is evaluated every second. Automatically reset if value exceed 2,147,483,647.</remarks>
     Public Property SuccessfulMessagePerSecond As Short
         Get
             Return m_SuccessfulMessagePerSecond
@@ -350,15 +348,15 @@ Public Class Core
 
     Public Sub New()
 
-        MaxRetransmitInterval = 30000
-        MessageTimeOut = 3000
+        MaxRetransmitInterval = 0
+        MessageTimeOut = 0
         TNS = CUShort((rnd.Next And &H7F) + 2) 'lowest 7 bits 
         DeviceList = New ArrayList
         DiscoveryNetworkList = New ArrayList
         DeviceSecurityModes = Common.SecurityModes.None
         DevicePassword = "DefaultPassword"
         MaxDeviceObjectCount = 1
-        MaxRetryAttempt = 1
+        MaxRetryAttempt = 0
 
     End Sub
 
@@ -397,8 +395,6 @@ Public Class Core
     ''' <param name="CMD"></param>
     ''' <remarks></remarks>
     Public Sub MessageAllocation(message As Byte(), NetworkType As Common.NetworkTypes, NetworkAddress As String, TNS As UShort, CMD As Byte)
-
-        Try
 
             'If the message is a Discovery check the time elapsed since last Dicovery. 5 seconds is the minimum time.
             If CMD = 3 Then
@@ -491,10 +487,6 @@ Public Class Core
                 End With
             End If
 
-        Catch ex As Exception
-
-        End Try
-
     End Sub
 
     ''' <summary>
@@ -508,250 +500,233 @@ Public Class Core
     Public Sub OnDataReceived(data As Byte(), length As Integer, NetworkType As Common.NetworkTypes, NetworkAddress As String)
         'Check if device already exist in device list
         Dim actualDevice As DataTypes.DeviceObject = Nothing
-        Try
-            For Each device As DataTypes.DeviceObject In DeviceList
-                If device.NetworkType = NetworkType And device.NetworkAddress = NetworkAddress Then
-                    actualDevice = device
-                    Exit For
+
+        For Each device As DataTypes.DeviceObject In DeviceList
+            If device.NetworkType = NetworkType And device.NetworkAddress = NetworkAddress Then
+                actualDevice = device
+                Exit For
+            End If
+        Next
+
+        If actualDevice Is Nothing Then
+            'The device doesn't exist. Add device to device list.
+            If DeviceList.Count < MaxDeviceObjectCount Then
+                actualDevice = New DataTypes.DeviceObject
+                With actualDevice
+                    .NetworkType = NetworkType
+                    .NetworkAddress = NetworkAddress
+                    .Password = "DevicePassword"
+                End With
+                DeviceList.Add(actualDevice)
+            Else
+                Throw New Exception("Device list already full")
+                Exit Sub
+            End If
+        End If
+
+        Dim dataNoCRC(length - 3) As Byte
+        Dim dataCRC(1) As Byte
+        Dim PayloadIndex As Integer
+        dataCRC(0) = data(length - 2)
+        dataCRC(1) = data(length - 1)
+        Array.Copy(data, dataNoCRC, length - 2)
+        Dim CheckSumResult As UShort = CUShort((CByte(dataCRC(0))) + (CByte(dataCRC(1))) * 256)
+
+        'CRC validation
+        If Common.CalculateCRC16(dataNoCRC) = CheckSumResult Then
+
+            'Create a Char Array based on data buffer byte
+            Dim c(dataNoCRC.Length - 1) As Char
+
+            Dim count As Integer = 0
+            For i = 0 To dataNoCRC.Length - 1
+                c(i) = Strings.ChrW(dataNoCRC(i))
+                If c(i) = Common.DIV Then
+                    count += 1
+                    If count = 4 Then
+                        PayloadIndex = i + 1
+                    End If
                 End If
             Next
 
-            If actualDevice Is Nothing Then
-                'The device doesn't exist. Add device to device list.
-                If DeviceList.Count < MaxDeviceObjectCount Then
-                    actualDevice = New DataTypes.DeviceObject
-                    With actualDevice
-                        .NetworkType = NetworkType
-                        .NetworkAddress = NetworkAddress
-                        .Password = "DevicePassword"
-                    End With
-                    DeviceList.Add(actualDevice)
-                Else
-                    Throw New Exception("Device list already full")
-                    Exit Sub
-                End If
-            End If
-        Catch ex As Exception
 
-        End Try
+            'Treatment depending on MessageFrame
+            If c(0) = Common.STX And c(c.Length - 1) = Common.ETX Then
+                Dim s As String = New String(c)
+                Dim trimmedMessage As String = Nothing
 
-        Try
-            Dim dataNoCRC(length - 3) As Byte
-            Dim dataCRC(1) As Byte
-            Dim PayloadIndex As Integer
-            dataCRC(0) = data(length - 2)
-            dataCRC(1) = data(length - 1)
-            Array.Copy(data, dataNoCRC, length - 2)
-            Dim CheckSumResult As UShort = CUShort((CByte(dataCRC(0))) + (CByte(dataCRC(1))) * 256)
+                trimmedMessage = s.Substring(1, s.Length - 2)
 
-            'CRC validation
-            If Common.CalculateCRC16(dataNoCRC) = CheckSumResult Then
-                Try
+                'Find the header parameters
+                Dim myParsedString() As String = trimmedMessage.Split({Common.DIV}, 5)
 
-                    'Create a Char Array based on data buffer byte
-                    Dim c(dataNoCRC.Length - 1) As Char
-                    Try
-                        Dim count As Integer = 0
-                        For i = 0 To dataNoCRC.Length - 1
-                            c(i) = Strings.ChrW(dataNoCRC(i))
-                            If c(i) = Common.DIV Then
-                                count += 1
-                                If count = 4 Then
-                                    PayloadIndex = i + 1
+                'Evaluate the kind of message
+                Select Case myParsedString(0)
+                    Case Common.Versioning(Common.MarathonVersion.V_1_1)
+                        Select Case myParsedString(1)
+                            Case Common.RequestCode
+                                If CInt(myParsedString(3)) = 1 Then 'Variable(s) reading
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
+                                    'For every pending items
+                                    Dim ELE As New ArrayList
+                                    For i = 0 To myParsedPayload.Length - 1
+                                        Dim temp As String
+                                        temp = myParsedPayload(i)
+                                        ELE.Add(temp)
+                                    Next
+
+                                    Dim rMessage As New Packet.Request.ReadVariablesPacketV1_1
+                                    With rMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .VALUESLIST = ELE
+                                    End With
+
+                                    RaiseEvent NewReadingReceive(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+
+                                ElseIf CInt(myParsedString(3)) = 2 Then  'Variable(s) writing
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
+                                    'For every pending items
+                                    Dim PAIR As New ArrayList
+                                    For i = 0 To myParsedPayload.Length - 2
+                                        Dim temp As Common.WritingPair
+                                        'The first item is index. Second item is value
+                                        temp.Index = myParsedPayload(i * 2)
+                                        temp.Value = myParsedPayload((i * 2) + 1)
+                                        PAIR.Add(temp)
+                                    Next
+
+                                    Dim sMessage As New Packet.Request.WriteVariablesPacketV1_1
+                                    With sMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .VALUESLIST = PAIR
+                                    End With
+
+                                    RaiseEvent NewWritingReceive(sMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+
+                                ElseIf CInt(myParsedString(3)) = 3 Then  'Discover Request
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
+                                    'For every pending items
+                                    Dim ELE As New ArrayList
+                                    For i = 0 To myParsedPayload.Length - 1
+                                        Dim temp As String
+                                        temp = myParsedPayload(i)
+                                        ELE.Add(temp)
+                                    Next
+
+                                    Dim sMessage As New Packet.Request.DiscoverPacketV1_1
+                                    With sMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .VALUESLIST = ELE
+                                    End With
+
+                                    RaiseEvent NewDiscoverReceive(sMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+
                                 End If
-                            End If
-                        Next
-                    Catch ex As Exception
 
-                    End Try
+                            Case Common.AnswerCode
+                                If CInt(myParsedString(3)) = 1 Then      'Return of variable(s) reading
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
+                                    Dim VALUES As New ArrayList
+                                    For i = 0 To (myParsedPayload.Length / 3) - 1
+                                        Dim temp As Common.ReturnedData
+                                        'The firt item is error code. Second item is index. Third item is value
+                                        temp.Code = CInt(myParsedPayload(CInt(3 * i)))
+                                        temp.Type = myParsedPayload(CInt(1 + (3 * i)))
+                                        temp.Value = myParsedPayload(CInt(2 + (3 * i)))
+                                        VALUES.Add(temp)
+                                    Next
 
-                    'Treatment depending on MessageFrame
-                    If c(0) = Common.STX And c(c.Length - 1) = Common.ETX Then
-                        Dim s As String = New String(c)
-                        Dim trimmedMessage As String = Nothing
-                        Try
-                            trimmedMessage = s.Substring(1, s.Length - 2)
-                        Catch ex As Exception
-                            Debug.Print(ex.Message)
-                        End Try
-                        'Find the header parameters
-                        Dim myParsedString() As String = trimmedMessage.Split({Common.DIV}, 5)
+                                    Dim rMessage As New Packet.Answer.ReturnedVariablesPacketV1_1
+                                    With rMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .VALUESLIST = VALUES
+                                    End With
 
-                        'Evaluate the kind of message
-                        Select Case myParsedString(0)
-                            Case Common.Versioning(Common.MarathonVersion.V_1_1)
-                                Select Case myParsedString(1)
-                                    Case Common.RequestCode
-                                        If CInt(myParsedString(3)) = 1 Then 'Variable(s) reading
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
-                                            'For every pending items
-                                            Dim ELE As New ArrayList
-                                            For i = 0 To myParsedPayload.Length - 1
-                                                Dim temp As String
-                                                temp = myParsedPayload(i)
-                                                ELE.Add(temp)
-                                            Next
-
-                                            Dim rMessage As New Packet.Request.ReadVariablesPacketV1_1
-                                            With rMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .VALUESLIST = ELE
-                                            End With
-
-                                            RaiseEvent NewReadingReceive(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-
-                                        ElseIf CInt(myParsedString(3)) = 2 Then  'Variable(s) writing
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
-                                            'For every pending items
-                                            Dim PAIR As New ArrayList
-                                            For i = 0 To myParsedPayload.Length - 2
-                                                Dim temp As Common.WritingPair
-                                                'The first item is index. Second item is value
-                                                temp.Index = myParsedPayload(i * 2)
-                                                temp.Value = myParsedPayload((i * 2) + 1)
-                                                PAIR.Add(temp)
-                                            Next
-
-                                            Dim sMessage As New Packet.Request.WriteVariablesPacketV1_1
-                                            With sMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .VALUESLIST = PAIR
-                                            End With
-
-                                            RaiseEvent NewWritingReceive(sMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-
-                                        ElseIf CInt(myParsedString(3)) = 3 Then  'Discover Request
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
-                                            'For every pending items
-                                            Dim ELE As New ArrayList
-                                            For i = 0 To myParsedPayload.Length - 1
-                                                Dim temp As String
-                                                temp = myParsedPayload(i)
-                                                ELE.Add(temp)
-                                            Next
-
-                                            Dim sMessage As New Packet.Request.DiscoverPacketV1_1
-                                            With sMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .VALUESLIST = ELE
-                                            End With
-
-                                            RaiseEvent NewDiscoverReceive(sMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-
+                                    'Response treatment
+                                    For Each device As DataTypes.DeviceObject In DeviceList
+                                        If device.NetworkAddress = NetworkAddress Then
+                                            SyncLock device.PendingMessages
+                                                For j = 0 To device.PendingMessages.Length - 1
+                                                    If Not device.PendingMessages(j) Is Nothing Then
+                                                        If device.PendingMessages(j).TNS = rMessage.TNS Then
+                                                            RaiseEvent ReadingReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+                                                            device.PendingMessages(j) = Nothing
+                                                            SuccessfulMessageCount += CShort(1)
+                                                        End If
+                                                    End If
+                                                Next
+                                            End SyncLock
+                                            Exit For
                                         End If
+                                    Next
 
-                                    Case Common.AnswerCode
-                                        If CInt(myParsedString(3)) = 1 Then      'Return of variable(s) reading
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
-                                            Dim VALUES As New ArrayList
-                                            For i = 0 To (myParsedPayload.Length / 3) - 1
-                                                Dim temp As Common.ReturnedData
-                                                'The firt item is error code. Second item is index. Third item is value
-                                                temp.Code = CInt(myParsedPayload(CInt(3 * i)))
-                                                temp.Type = myParsedPayload(CInt(1 + (3 * i)))
-                                                temp.Value = myParsedPayload(CInt(2 + (3 * i)))
-                                                VALUES.Add(temp)
-                                            Next
+                                ElseIf CInt(myParsedString(3)) = 2 Then  'Return of  variable(s) writing
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
+                                    Dim CODES As New ArrayList
+                                    'For every pending items
+                                    For i = 0 To myParsedPayload.Length - 1
+                                        Dim temp As String
+                                        'The element is Error code.
+                                        temp = myParsedPayload(i)
+                                        CODES.Add(temp)
+                                    Next
 
-                                            Dim rMessage As New Packet.Answer.ReturnedVariablesPacketV1_1
-                                            With rMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .VALUESLIST = VALUES
-                                            End With
+                                    Dim rMessage As New Packet.Answer.ResponseGenericPacketV1_1
+                                    With rMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .CODES = CODES
+                                    End With
 
-                                            'Response treatment
-                                            For Each device As DataTypes.DeviceObject In DeviceList
-                                                If device.NetworkAddress = NetworkAddress Then
-                                                    SyncLock device.PendingMessages
-                                                        For j = 0 To device.PendingMessages.Length - 1
-                                                            If Not device.PendingMessages(j) Is Nothing Then
-                                                                If device.PendingMessages(j).TNS = rMessage.TNS Then
-                                                                    RaiseEvent ReadingReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-                                                                    device.PendingMessages(j) = Nothing
-                                                                    SuccessfulMessageCount += CShort(1)
-                                                                End If
-                                                            End If
-                                                        Next
-                                                    End SyncLock
-                                                    Exit For
-                                                End If
-                                            Next
-
-                                        ElseIf CInt(myParsedString(3)) = 2 Then  'Return of  variable(s) writing
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
-                                            Dim CODES As New ArrayList
-                                            'For every pending items
-                                            For i = 0 To myParsedPayload.Length - 1
-                                                Dim temp As String
-                                                'The element is Error code.
-                                                temp = myParsedPayload(i)
-                                                CODES.Add(temp)
-                                            Next
-
-                                            Dim rMessage As New Packet.Answer.ResponseGenericPacketV1_1
-                                            With rMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .CODES = CODES
-                                            End With
-
-                                            'Response treatment
-                                            For Each device As DataTypes.DeviceObject In DeviceList
-                                                If device.NetworkAddress = NetworkAddress Then
-                                                    SyncLock device.PendingMessages
-                                                        For j = 0 To device.PendingMessages.Length - 1
-                                                            If Not device.PendingMessages(j) Is Nothing Then
-                                                                If device.PendingMessages(j).TNS = rMessage.TNS Then
-                                                                    RaiseEvent WritingReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-                                                                    device.PendingMessages(j) = Nothing
-                                                                    SuccessfulMessageCount += CShort(1)
-                                                                End If
-                                                            End If
-                                                        Next
-                                                    End SyncLock
-                                                    Exit For
-                                                End If
-                                            Next
-
-                                        ElseIf CInt(myParsedString(3)) = 3 Then 'Discover Response
-                                            Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
-                                            Dim VALUES As New ArrayList
-                                            For i = 0 To (myParsedPayload.Length / 3) - 1
-                                                Dim temp As Common.ReturnedData
-                                                'The firt item is error code. Second item is index. Third item is value
-                                                temp.Code = CInt(myParsedPayload(CInt((3 * i))))
-                                                temp.Type = myParsedPayload(CInt(1 + (3 * i)))
-                                                temp.Value = myParsedPayload(CInt(2 + (3 * i)))
-                                                VALUES.Add(temp)
-                                            Next
-
-                                            Dim rMessage As New Packet.Answer.DiscoverResponsePacketV1_1
-                                            With rMessage
-                                                .TNS = CUShort(myParsedString(2))
-                                                .VALUESLIST = VALUES
-                                            End With
-
-                                            RaiseEvent DiscoverReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
-
+                                    'Response treatment
+                                    For Each device As DataTypes.DeviceObject In DeviceList
+                                        If device.NetworkAddress = NetworkAddress Then
+                                            SyncLock device.PendingMessages
+                                                For j = 0 To device.PendingMessages.Length - 1
+                                                    If Not device.PendingMessages(j) Is Nothing Then
+                                                        If device.PendingMessages(j).TNS = rMessage.TNS Then
+                                                            RaiseEvent WritingReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+                                                            device.PendingMessages(j) = Nothing
+                                                            SuccessfulMessageCount += CShort(1)
+                                                        End If
+                                                    End If
+                                                Next
+                                            End SyncLock
+                                            Exit For
                                         End If
-                                End Select
+                                    Next
 
+                                ElseIf CInt(myParsedString(3)) = 3 Then 'Discover Response
+                                    Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
+                                    Dim VALUES As New ArrayList
+                                    For i = 0 To (myParsedPayload.Length / 3) - 1
+                                        Dim temp As Common.ReturnedData
+                                        'The firt item is error code. Second item is index. Third item is value
+                                        temp.Code = CInt(myParsedPayload(CInt((3 * i))))
+                                        temp.Type = myParsedPayload(CInt(1 + (3 * i)))
+                                        temp.Value = myParsedPayload(CInt(2 + (3 * i)))
+                                        VALUES.Add(temp)
+                                    Next
+
+                                    Dim rMessage As New Packet.Answer.DiscoverResponsePacketV1_1
+                                    With rMessage
+                                        .TNS = CUShort(myParsedString(2))
+                                        .VALUESLIST = VALUES
+                                    End With
+
+                                    RaiseEvent DiscoverReturn(rMessage, New MessageEventArgs(NetworkType, NetworkAddress))
+
+                                End If
                         End Select
 
-                        ReceivedMessageCount += 1
+                End Select
 
-                    Else : Throw New Exception("Bad marathonTP message format")
-                        Exit Sub
-                    End If
+                ReceivedMessageCount += 1
 
-
-                Catch ex As Exception
-                    Debug.Print(ex.Message)
-                End Try
+            Else : Throw New Exception("Bad marathonTP message format")
+                Exit Sub
             End If
 
-        Catch ex As Exception
-            Throw New Exception("Bad marathonTP message format")
-        End Try
+        End If
 
     End Sub
 
@@ -910,44 +885,38 @@ Public Class Core
         Dim OutBuffer As Byte() = Nothing
         Dim CheckSumCalc As UShort
 
-        Try
+        Select Case encyptionMode
+            Case Common.SecurityModes.None
 
-            Select Case encyptionMode
-                Case Common.SecurityModes.None
+                CRCBuffer = Encoding.UTF8.GetBytes(MessageHeader + Payload + Common.ETX)
 
-                    CRCBuffer = Encoding.UTF8.GetBytes(MessageHeader + Payload + Common.ETX)
+            Case Common.SecurityModes.XTEA
+                Dim myXTEA As New Encryption.XTEA
+                Dim HeaderBuffer As Byte() = Encoding.UTF8.GetBytes(MessageHeader)
+                Dim XTEABuffer As Byte() = myXTEA.Encrypt(32, Payload, Password)
+                Dim retBuffer(HeaderBuffer.Length + XTEABuffer.Length) As Byte
+                HeaderBuffer.CopyTo(retBuffer, 0)
+                XTEABuffer.CopyTo(retBuffer, HeaderBuffer.Length)
+                retBuffer(retBuffer.Length - 1) = 125   'character "}"
+                CRCBuffer = retBuffer
 
-                Case Common.SecurityModes.XTEA
-                    Dim myXTEA As New Encryption.XTEA
-                    Dim HeaderBuffer As Byte() = Encoding.UTF8.GetBytes(MessageHeader)
-                    Dim XTEABuffer As Byte() = myXTEA.Encrypt(32, Payload, Password)
-                    Dim retBuffer(HeaderBuffer.Length + XTEABuffer.Length) As Byte
-                    HeaderBuffer.CopyTo(retBuffer, 0)
-                    XTEABuffer.CopyTo(retBuffer, HeaderBuffer.Length)
-                    retBuffer(retBuffer.Length - 1) = 125   'character "}"
-                    CRCBuffer = retBuffer
+            Case Common.SecurityModes.Advanced
+                Throw New Exception("Unsuported Encryption")
 
-                Case Common.SecurityModes.Advanced
-                    Throw New Exception("Unsuported Encryption")
+        End Select
 
-            End Select
+        CheckSumCalc = Inertia.MTPCore.Common.CalculateCRC16(CRCBuffer)
+        Dim CRC1 As Byte = CByte((CheckSumCalc And 255))
+        Dim CRC2 As Byte = CByte((CheckSumCalc \ CUShort(2 ^ 8)))
 
-            CheckSumCalc = Inertia.MTPCore.Common.CalculateCRC16(CRCBuffer)
-            Dim CRC1 As Byte = CByte((CheckSumCalc And 255))
-            Dim CRC2 As Byte = CByte((CheckSumCalc \ CUShort(2 ^ 8)))
+        Dim ByteToCopy As Integer = CRCBuffer.Length
+        Dim MessageBuffer(CRCBuffer.Length + 1) As Byte
+        Array.Copy(CRCBuffer, MessageBuffer, CRCBuffer.Length)
 
-            Dim ByteToCopy As Integer = CRCBuffer.Length
-            Dim MessageBuffer(CRCBuffer.Length + 1) As Byte
-            Array.Copy(CRCBuffer, MessageBuffer, CRCBuffer.Length)
+        MessageBuffer(ByteToCopy) = CRC1
+        MessageBuffer(ByteToCopy + 1) = CRC2
 
-            MessageBuffer(ByteToCopy) = CRC1
-            MessageBuffer(ByteToCopy + 1) = CRC2
-
-            OutBuffer = MessageBuffer
-
-        Catch ex As Exception
-
-        End Try
+        OutBuffer = MessageBuffer
 
         Return OutBuffer
 
@@ -990,24 +959,27 @@ Public Class Core
                         For j = 0 To device.PendingMessages.Length - 1
                             If Not device.PendingMessages(j) Is Nothing Then
                                 With device.PendingMessages(j)
-                                    If .Retries = 0 Then
+                                    If .Retries = 0 Then    'The first attempt must be sent
                                         RaiseEvent MessageSendingRequest((.Message), New MessageEventArgs(device.NetworkType, device.NetworkAddress))
                                         .Retries += CUShort(1)
-                                    ElseIf .Retries <= MaxRetryAttempt Then
-                                        'Calculate elapsed time
-                                        Dim elapsedLast As TimeSpan
-                                        Dim elapsedTotal As TimeSpan
-                                        elapsedLast = Date.Now - .LastTimestamp
-                                        elapsedTotal = Date.Now - .InitialTimestamp
-                                        If (elapsedLast.Seconds * 1000) + elapsedLast.Milliseconds > .TimeOut And (elapsedTotal.Seconds * 1000) + elapsedTotal.Milliseconds < MaxRetransmitInterval Then
-                                            RaiseEvent MessageSendingRequest((.Message), New MessageEventArgs(device.NetworkType, device.NetworkAddress))
-                                            .Retries += CUShort(1)
-                                            .LastTimestamp = Date.Now
-                                            .TimeOut = CUShort(device.PendingMessages(j).TimeOut * 2)
-                                        End If
                                     Else
-                                        device.PendingMessages(j) = Nothing
+                                        'Calculate elapsed time
+                                        Dim elapsedLast As Integer = ((Date.Now - .LastTimestamp).Seconds * 1000) + (Date.Now - .LastTimestamp).Milliseconds
+                                        Dim elapsedTotal As Integer = ((Date.Now - .InitialTimestamp).Seconds * 1000) + (Date.Now - .InitialTimestamp).Milliseconds
+                                        If elapsedLast > .TimeOut Then
+                                            If .Retries <= MaxRetryAttempt And elapsedTotal < MaxRetransmitInterval Then
+                                                RaiseEvent MessageSendingRequest((.Message), New MessageEventArgs(device.NetworkType, device.NetworkAddress))
+                                                .Retries += CUShort(1)
+                                                .LastTimestamp = Date.Now
+                                                .TimeOut = CUShort(device.PendingMessages(j).TimeOut * 2)   'Exponential Back-off
+                                            Else
+                                                FailedMessageCount += 1
+                                                RaiseEvent MessageFailed(.TNS, New MessageEventArgs(device.NetworkType, device.NetworkAddress))
+                                                device.PendingMessages(j) = Nothing
+                                            End If
+                                        End If
                                     End If
+
                                 End With
                             End If
 
