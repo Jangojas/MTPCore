@@ -587,7 +587,7 @@ Public Class Core
                                     Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, DevicePassword)
                                     'For every pending items
                                     Dim PAIR As New ArrayList
-                                    For i = 0 To myParsedPayload.Length - 2
+                                    For i = 0 To CInt(myParsedPayload.Length / 2) - 1
                                         Dim temp As Common.WritingPair
                                         'The first item is index. Second item is value
                                         temp.Index = myParsedPayload(i * 2)
@@ -627,12 +627,12 @@ Public Class Core
                                 If CInt(myParsedString(3)) = 1 Then      'Return of variable(s) reading
                                     Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, DeviceSecurityModes, PayloadIndex, actualDevice.Password)
                                     Dim VALUES As New ArrayList
-                                    For i = 0 To (myParsedPayload.Length / 3) - 1
+                                    For i = 0 To CInt(myParsedPayload.Length / 3) - 1
                                         Dim temp As Common.ReturnedData
                                         'The firt item is error code. Second item is index. Third item is value
-                                        temp.Code = CInt(myParsedPayload(CInt(3 * i)))
-                                        temp.Type = myParsedPayload(CInt(1 + (3 * i)))
-                                        temp.Value = myParsedPayload(CInt(2 + (3 * i)))
+                                        temp.Code = CInt(myParsedPayload(3 * i))
+                                        temp.Type = myParsedPayload(1 + (3 * i))
+                                        temp.Value = myParsedPayload(2 + (3 * i))
                                         VALUES.Add(temp)
                                     Next
 
@@ -698,12 +698,12 @@ Public Class Core
                                 ElseIf CInt(myParsedString(3)) = 3 Then 'Discover Response
                                     Dim myParsedPayload() As String = ParsePayload(myParsedString(4), dataNoCRC, Common.SecurityModes.None, PayloadIndex)
                                     Dim VALUES As New ArrayList
-                                    For i = 0 To (myParsedPayload.Length / 3) - 1
+                                    For i = 0 To CInt(myParsedPayload.Length / 3) - 1
                                         Dim temp As Common.ReturnedData
                                         'The firt item is error code. Second item is index. Third item is value
-                                        temp.Code = CInt(myParsedPayload(CInt((3 * i))))
-                                        temp.Type = myParsedPayload(CInt(1 + (3 * i)))
-                                        temp.Value = myParsedPayload(CInt(2 + (3 * i)))
+                                        temp.Code = CInt(myParsedPayload((3 * i)))
+                                        temp.Type = myParsedPayload(1 + (3 * i))
+                                        temp.Value = myParsedPayload(2 + (3 * i))
                                         VALUES.Add(temp)
                                     Next
 

@@ -1,3 +1,4 @@
+C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\BE\Gadgeteer.pdbx
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\le\MTPCore.dll
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\be\MTPCore.dll
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\le\MTPCore.pdb
@@ -12,7 +13,6 @@ C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\be\MTPCore.pdbx
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\LE\Gadgeteer.pe
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\BE\Gadgeteer.pe
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\LE\Gadgeteer.pdbx
-C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\BE\Gadgeteer.pdbx
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\Gadgeteer.dll
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\Gadgeteer.pdb
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\bin\Debug\Gadgeteer.xml
@@ -24,4 +24,3 @@ C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\le\MTPCore.pdbx
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.dll
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.xml
 C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.pdb
-C:\Users\jango\Source\Repos\MTPCore\MFMTPCore\obj\Debug\MTPCore.vbprojResolveAssemblyReference.cache
